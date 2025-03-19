@@ -7,7 +7,7 @@ function CreatePaste() {
 
   const createPaste = async () => {
     const response = await axios.post("http://127.0.0.1:5000/paste", { content });
-    setPasteUrl(`http://localhost:3000/paste/${response.data.paste_id}`);
+    setPasteUrl(`https://pastebin-o5fpa2agc-satwiks-projects-992afff7.vercel.app/paste/${response.data.paste_id}`);
   };
 
   return (

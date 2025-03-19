@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import uuid
+from waitress import serve  # Import Waitress for production deployment
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
@@ -34,5 +35,4 @@ def get_paste(paste_id):
     return jsonify({"content": content})
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    serve(app, host="0.0.0.0", port=8000)  # Use Waitress to serve the app
